@@ -5,9 +5,10 @@ let currentsong = new Audio();
 let currfolder;
 
 // Select DOM elements — adjust selectors if needed
-const play = document.querySelector(".play-button");
-const prev = document.querySelector(".prev-button");
-const next = document.querySelector(".next-button");
+const play = document.getElementById("play");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
 
 // Convert seconds to MM:SS format
 function secondsToMinutes(seconds) {

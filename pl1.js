@@ -19,8 +19,9 @@ function secondsToMinutes(seconds) {
 // Fetch the list of songs from the folder
 async function getsongs(folder) {
   currfolder = folder;
-  let a = await fetch(`/${folder}/`);
-  let response = await a.text();
+  let response = await fetch(`/${folder}/songs.json`);
+  songs = await response.json();
+  console.log("Songs found:", songs);
 
   let div = document.createElement("div");
   div.innerHTML = response;

@@ -1,0 +1,1288 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    /* Default styles for mobile */
+    body{
+        height: 100%;
+        position: relative;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        background-image: url(logofinal.png);
+        background-size:contain;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    body::after{
+        background-color: blue;
+    }
+    .nav{
+        width: 100%;
+        height: 180px;
+        justify-content: start;
+        position: fixed;
+        background-color: rgb(246,190,0);
+    }
+    .title{
+        border-bottom: 4px; 
+    }
+    .title img{
+    
+        width:350px;
+        height: 170px;
+        object-fit: contain;
+        
+    }
+    
+    .logo{
+       
+        position: fixed;
+    
+    }
+    .logo video{
+        width: 120px;
+        height: 120px;
+        position: relative;
+        left: 95%;
+        top: 120px;
+        border: 5px solid black;
+        border-radius: 100px;
+
+    }
+    .a{ 
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .pl1{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .a .pl1 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .a .pl1 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    
+    .b{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .pl2{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .b .pl2 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .b .pl2 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    .c{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .pl3{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .c .pl3 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .c .pl3 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    .d{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+        
+    }
+    .pl4{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .d .pl4 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .d .pl4 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    
+    .e{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+        
+    }
+    .pl5{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .e .pl5 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .e .pl5 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    
+    .f{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+        
+    }
+    .pl6{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .f .pl6 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .f .pl6 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    
+    .g{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+        
+    }
+    .pl7{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .g .pl7 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .g .pl7 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    
+    .h{
+        width: 230px;
+        height: 230px;
+        margin: 25px;
+        padding: 10px;
+        background-color: red;
+        border-radius: 20px 0px 20px 0px;
+        cursor: pointer;
+        display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap;
+        
+    }
+    .pl8{
+        border: 3px solid;
+        height: 190px;
+        width: 190px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .h .pl8 img{
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+
+    }
+    .h .pl8 img:hover{
+          width: 150px;
+          height: 150px;
+    }
+    
+    .main{
+        padding-top: 230px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        flex-wrap: wrap;        
+        
+    }
+    
+    
+    .p1{
+       
+       justify-content: center;
+       
+    }
+    .p2{
+        
+        justify-content: center;
+        
+     
+  }
+    .p3{
+        
+        justify-content: center;
+        
+     
+  }
+    .p4{
+     
+        justify-content: center;
+        
+     
+  }
+  .atext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .btext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .ctext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .dtext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .etext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .ftext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .gtext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+  .htext{
+    margin-top:8px;
+    text-decoration: overline;
+    font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  }
+
+  .footer{
+    text-align: center;
+    margin-top: 10px;
+    
+  }
+  .footer a{
+    text-decoration: none;
+    color: aliceblue;
+    
+
+  }
+  .footer img{
+    filter: invert();
+    width: 30px;
+  }
+ 
+  .footer span{
+    margin-top: 5px;
+  }
+  .footer a:hover{
+    text-decoration: underline;
+    color: gray;
+  }
+  .cr{
+    text-align: center;
+    color: aliceblue;
+    margin: 50px;
+    font-weight: 800;
+  }
+  .count{
+    color: aliceblue;
+    margin: 50px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .m img{
+    width: 40px;
+  }
+  .m{
+    color: aliceblue;
+    font-weight: 800;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    margin-left: 40%;
+  }
+  
+
+  
+    
+
+  
+  /* Tablet (devices with a width of 768px or more but less than 1024px) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+      font-size: 18px;
+      background-color:black;
+      margin: 0;
+        padding: 0;
+    }
+    .logo{
+
+        position: fixed;
+        left: 350px;
+    }
+    .title img{
+        margin-left: 300px;
+    }
+    .logo video{
+        width: 120px;
+        height: 120px;
+        position: relative;
+        left: 44%;
+        border: 5px solid black;
+        border-radius: 10000px;
+
+    }
+    .a{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 13px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    .pl1{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .a .pl1 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .a .pl1 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    .atext{
+        display: none;
+    }.btext{
+        display: none;
+    }.ctext{
+        display: none;
+    }.dtext{
+        display: none;
+    }.etext{
+        display: none;
+    }.ftext{
+        display: none;
+    }.gtext{
+        display: none;
+    }.htext{
+        display: none;
+    }
+    .b{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl2{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .b .pl2 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .b .pl2 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    .c{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl3{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .c .pl3 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .c .pl3 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+
+    .d{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl4{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .d .pl4 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .d .pl4 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    .e{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl5{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .e .pl5 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .e .pl5 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    .f{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl6{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .f .pl6 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .f .pl6 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    .g{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl7{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .g .pl7 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .g .pl7 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    .h{
+        width: 350px;
+        height: 350px;
+        background-color:red;
+        margin: 15px;
+    }
+    .pl8{
+        border: 3px solid;
+        height: 290px;
+        width: 290px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .h .pl8 img{
+        height: 270px;
+        width: 270px;
+        border-radius: 20px;
+
+    }
+    .h .pl8 img:hover{
+          width: 250px;
+          height: 250px;
+    }
+    
+    .p1{
+       display: flex;
+       gap: 100px;
+       
+       
+    }
+    .p2{
+        display: flex;
+        gap: 100px;
+       margin-top: 50px;
+        
+     
+  }
+    
+    .p3{
+        display: flex;
+        gap: 100px;
+       margin-top: 50px;
+        
+     
+  }
+    
+    .p4{
+        display: flex;
+        gap: 100px;
+       margin-top: 50px;
+        
+     
+  }
+
+  
+
+  }
+  
+  /* Desktop (devices with a width of 1024px or more) */
+  @media only screen and (min-width: 1024px) {
+    body {
+       width: 100%;
+      font-size: 20px;
+      background-color: rgb(14, 14, 14);
+      margin: 0;
+        padding: 0;
+       
+
+    }
+    .nav{
+        margin: 0px;
+        width: 100%;
+        height: 180px;
+        position: fixed;
+        background-color: rgb(246,190,0);
+    }
+    .main{
+       
+        justify-content: center;
+        padding-top: 250px;
+        
+        
+    }
+    .title{
+        background-color: rgb(246,190,0);
+        position: sticky;
+        
+        
+    }
+    .forpc img{
+        width: 600px;
+        height: 177px;
+        position: absolute;
+        left: 30%;
+        
+    }
+    .logo{
+        
+        position: fixed;
+    }
+    .logo video{
+        width: 160px;
+        height: 160px;
+        left: 675px;
+        border: 5px solid black;
+        border-radius: 10000px;
+
+    }
+    .a{
+        display: flex;
+        flex-wrap: wrap;
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 0px 20px 20px 0px;
+        margin: 15px;
+    }
+    .pl1{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+    
+        
+    }
+    .a .pl1 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .a .pl1 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .atext{
+        height: 30px;
+        width: 350px;
+        color:rgb(21, 20, 20);
+        font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+       font-size: 20px;
+    
+        visibility: hidden;
+        
+    }
+    .a:hover .atext{
+        visibility: visible;
+        text-decoration: overline;
+    }
+    .b{
+        display: flex;
+        flex-wrap: wrap;
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 20px 0px 0px 20px;
+        margin: 15px;
+    }
+    .pl2{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .b .pl2 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .b .pl2 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .btext{
+        height: 30px;
+        width: 350px;
+        color:rgb(21, 20, 20);
+        font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 20px;
+        visibility: hidden;
+        
+    }
+    .b:hover .btext{
+        visibility: visible;
+        text-decoration: overline;
+    }
+    .c{
+    
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 0px 20px 20px 0px;
+        margin: 35px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pl3{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .c .pl3 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .c .pl3 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .ctext{
+        height: 30px;
+     width: 350px;
+    color:rgb(21, 20, 20);
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 20px;
+    visibility: hidden;
+    
+}
+.c:hover .ctext{
+    visibility: visible;
+    text-decoration: overline;
+}
+    
+    .d{
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 20px 0px 0px 20px;
+        margin: 35px;
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .pl4{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .d .pl4 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .d .pl4 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .dtext{
+        height: 30px;
+    width: 350px;
+    color:rgb(21, 20, 20);
+    font-family: "Poppins", serif;
+font-weight: 800;
+font-style: italic;
+font-size: 20px;
+    visibility: hidden;
+    
+}
+.d:hover .dtext{
+    visibility: visible;
+    text-decoration: overline;
+}
+    .e{
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 0px 20px 20px 0px;
+        margin: 35px;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .pl5{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .e .pl5 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .e .pl5 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .etext{
+        height: 30px;
+    width: 350px;
+    color:rgb(21, 20, 20);
+    font-family: "Poppins", serif;
+font-weight: 800;
+font-style: italic;
+font-size: 20px;
+    visibility: hidden;
+    
+}
+.e:hover .etext{
+    visibility: visible;
+    text-decoration: overline;
+}
+    .f{
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 20px 0px 0px 20px;
+        margin: 35px;
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .pl6{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .f .pl6 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .f .pl6 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .ftext{
+        height: 30px;
+    width: 350px;
+    color:rgb(21, 20, 20);
+    font-family: "Poppins", serif;
+font-weight: 800;
+font-style: italic;
+font-size: 20px;
+    visibility: hidden;
+    
+}
+.f:hover .ftext{
+    visibility: visible;
+    text-decoration: overline;
+}
+    .g{
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 0px 20px 20px 0px;
+        margin: 35px;
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .pl7{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .g .pl7 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .g .pl7 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .gtext{
+        height: 30px;
+    width: 350px;
+    color:rgb(21, 20, 20);
+    font-family: "Poppins", serif;
+font-weight: 800;
+font-style: italic;
+font-size: 20px;
+    visibility: hidden;
+    
+}
+.g:hover .gtext{
+    visibility: visible;
+    text-decoration: overline;
+}
+    .h{
+        width: 550px;
+        height: 550px;
+        background-color: red;
+        border-radius: 20px 0px 0px 20px;
+        margin: 35px;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .pl8{
+        border: 3px solid;
+        height: 400px;
+        width: 400px;
+        background-color: black;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 0px 20px 0px 20px;
+        
+    }
+    .h .pl8 img{
+        height: 350px;
+        width: 350px;
+        border-radius: 20px;
+
+    }
+    .h .pl8 img:hover{
+          width: 300px;
+          height: 300px;
+    }
+    .htext{
+        height: 30px;
+    width: 350px;
+    color:rgb(21, 20, 20);
+    font-family: "Poppins", serif;
+font-weight: 800;
+font-style: italic;
+font-size: 20px;
+    visibility: hidden;
+    
+}
+.h:hover .htext{
+    visibility: visible;
+    text-decoration: overline;
+}
+    
+    .p1{
+       display: flex;
+       justify-content: center;
+       gap: 100px;
+       
+      
+       
+    }
+    .p2{
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+       gap: 100px;
+       margin-top: 50px;
+        
+     
+  }
+    .p3{
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+       gap: 100px;
+       margin-top: 50px;
+        
+     
+  }
+    .p4{
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+       gap: 100px;
+       margin-top: 50px;
+        
+     
+  }
+  .footer{
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    
+  }
+  .footer img{
+    filter: invert();
+    width: 40px;
+  }
+ 
+  .footer a{
+    text-decoration: none;
+    color: aliceblue;
+
+  }
+  .footer a:hover{
+    text-decoration: underline;
+    color: gray;
+  }
+  .cr{
+    text-align: center;
+    color: aliceblue;
+    margin: 50px;
+    font-weight: 800;
+  }
+  .count{
+    color: aliceblue;
+    margin: 50px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .m img{
+    width: 40px;
+  }
+  .m{
+    color: aliceblue;
+    font-weight: 800;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    margin-left: 45%;
+  }
+  
+
+  }
+  

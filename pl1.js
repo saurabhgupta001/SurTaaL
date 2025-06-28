@@ -14,21 +14,30 @@ function secondsToMinutes(seconds) {
  return `${formattedMinutes}:${formattedsecond}`;
 }
 
-async function getsongs(folder){
-  currfolder = folder;
-  let a = await fetch(`/${folder}/`)
-  let response = await a.text();
-  let div = document.createElement("div")
-  div.innerHTML = response;
-  let as = div.getElementsByTagName("a")
-  songs = [];
-  for (let index = 0; index < as.length; index++) {
-    const element = as[index];
-    if (element.href.endsWith(".mp3")){
-      songs.push(element.href.split(`/${folder}/`)[1])
+async function getSongs(folder) {
+  const currfolder = folder;
+  const response = await fetch(`/${folder}/`);
+  const html = await response.text();
+
+  const div = document.createElement("div");
+  div.innerHTML = html;
+
+  const anchors = div.getElementsByTagName("a");
+  const songs = [];
+
+  for (let i = 0; i < anchors.length; i++) {
+    const href = anchors[i].getAttribute("href");
+
+    if (href && href.endsWith(".mp3")) {
+      // Clean filename without folder path
+      const filename = href.split("/").pop();
+      songs.push(filename);
     }
-    
   }
+
+  return songs;
+}
+
   //show all song in the playlist
   let songul = document.querySelector(".list").getElementsByTagName("ul")[0]
   songul.innerHTML = '';

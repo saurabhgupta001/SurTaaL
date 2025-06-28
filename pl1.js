@@ -35,9 +35,6 @@ async function getSongs(folder) {
     }
   }
 
-  return songs;
-}
-
   //show all song in the playlist
   let songul = document.querySelector(".list").getElementsByTagName("ul")[0]
   songul.innerHTML = '';

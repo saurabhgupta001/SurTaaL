@@ -78,16 +78,21 @@ async function main() {
 
   prevBtn.addEventListener("click", () => {
     const currentTrack = currentsong.src.split("/").pop();
-    const index = songs.indexOf(currentTrack);
-    if (index > 0) playmusic(songs[index - 1]);
+    let index = songs.indexOf(currentTrack);
+    if (index > 0) {
+      playmusic(songs[index - 1]);
+    }
   });
 
   nextBtn.addEventListener("click", () => {
     const currentTrack = currentsong.src.split("/").pop();
-    const index = songs.indexOf(currentTrack);
-    if (index + 1 < songs.length) playmusic(songs[index + 1]);
+    let index = songs.indexOf(currentTrack);
+    if (index + 1 < songs.length) {
+      playmusic(songs[index + 1]);
+    }
   });
 
+  // Update song time and progress bar
   currentsong.addEventListener("timeupdate", () => {
     const current = currentsong.currentTime;
     const duration = currentsong.duration || 0;
@@ -95,14 +100,16 @@ async function main() {
     document.querySelector(".circle").style.left = `${(current / duration) * 100}%`;
   });
 
+  // Auto play next song when current ends
   currentsong.addEventListener("ended", () => {
     const currentTrack = currentsong.src.split("/").pop();
-    const index = songs.indexOf(currentTrack);
+    let index = songs.indexOf(currentTrack);
     if (index + 1 < songs.length) {
       playmusic(songs[index + 1]);
     }
   });
 
+  // Seek bar click
   document.querySelector(".seekbar").addEventListener("click", e => {
     const percent = e.offsetX / e.target.getBoundingClientRect().width;
     if (!isNaN(currentsong.duration)) {
@@ -110,11 +117,12 @@ async function main() {
     }
   });
 
+  // Volume control
   document.querySelector(".range input").addEventListener("input", e => {
     currentsong.volume = e.target.value / 100;
   });
 
-  // Playlist switching logic via buttons
+  // Playlist switching buttons
   document.querySelectorAll(".playlist-btn").forEach(btn => {
     btn.addEventListener("click", async () => {
       const folder = btn.dataset.folder;
@@ -125,3 +133,4 @@ async function main() {
 }
 
 main();
+

@@ -1,8 +1,8 @@
-console.log('Let\'s write JavaScript');
+console.log("Let's write JavaScript");
 
 let songs = [];
 let currentsong = new Audio();
-let currfolder;
+let currfolder = "";
 
 function secondsToMinutes(seconds) {
   if (isNaN(seconds) || seconds < 0) return "00:00";
@@ -13,41 +13,41 @@ function secondsToMinutes(seconds) {
 
 async function getsongs(folder) {
   currfolder = folder;
+
   try {
-    let res = await fetch(`${folder}/songs.json`);
+    const res = await fetch(`songlist/${folder}/songs.json`);
     songs = await res.json();
 
-    let songul = document.querySelector(".list ul");
-    songul.innerHTML = '';
+    const songul = document.querySelector(".list ul");
+    songul.innerHTML = "";
+
     for (const song of songs) {
       songul.innerHTML += `
         <li>
-          <img src="music.svg" alt="">
+          <img src="music.svg" alt="icon">
           <div class="infosong">
-            <div>${song}</div>
+            <div>${song.replaceAll("%20", " ")}</div>
             <div>-SurTaaL Music</div>
           </div>
           <div class="playnow">
             <span>Hit Me</span>
-            <img src="playnow.svg" alt="">
+            <img src="playnow.svg" alt="play">
           </div>
         </li>`;
     }
 
-    // Attach click listeners to each song
     document.querySelectorAll(".list li").forEach((li, index) => {
-      li.addEventListener("click", () => {
-        playmusic(songs[index]);
-      });
+      li.addEventListener("click", () => playmusic(songs[index]));
     });
 
   } catch (err) {
-    console.error("Failed to fetch song list:", err);
+    console.error(`Error loading songs from ${folder}:`, err);
   }
 }
 
 function playmusic(track, pause = false) {
-  currentsong.src = `${currfolder}/${track}`;
+  currentsong.src = `songlist/${currfolder}/${track}`;
+
   if (!pause) {
     currentsong.play();
     document.querySelector("#play img").src = 'pause.svg';
@@ -62,7 +62,7 @@ async function main() {
   const prevBtn = document.getElementById("prev");
   const nextBtn = document.getElementById("next");
 
-  await getsongs("songlist/hss");
+  await getsongs("hss");
   playmusic(songs[0], true);
 
   playBtn.addEventListener("click", () => {
@@ -76,19 +76,13 @@ async function main() {
   });
 
   prevBtn.addEventListener("click", () => {
-    let currentTrack = currentsong.src.split("/").pop();
-    let index = songs.indexOf(currentTrack);
-    if (index > 0) {
-      playmusic(songs[index - 1]);
-    }
+    const index = songs.indexOf(currentsong.src.split("/").pop());
+    if (index > 0) playmusic(songs[index - 1]);
   });
 
   nextBtn.addEventListener("click", () => {
-    let currentTrack = currentsong.src.split("/").pop();
-    let index = songs.indexOf(currentTrack);
-    if (index + 1 < songs.length) {
-      playmusic(songs[index + 1]);
-    }
+    const index = songs.indexOf(currentsong.src.split("/").pop());
+    if (index + 1 < songs.length) playmusic(songs[index + 1]);
   });
 
   currentsong.addEventListener("timeupdate", () => {
@@ -99,22 +93,29 @@ async function main() {
   });
 
   currentsong.addEventListener("ended", () => {
-    let currentTrack = currentsong.src.split("/").pop();
-    let index = songs.indexOf(currentTrack);
+    const index = songs.indexOf(currentsong.src.split("/").pop());
     if (index + 1 < songs.length) {
       playmusic(songs[index + 1]);
     }
   });
 
   document.querySelector(".seekbar").addEventListener("click", e => {
-    let percent = (e.offsetX / e.target.getBoundingClientRect().width);
+    const percent = e.offsetX / e.target.getBoundingClientRect().width;
     if (!isNaN(currentsong.duration)) {
       currentsong.currentTime = percent * currentsong.duration;
     }
   });
 
-  document.querySelector(".range input").addEventListener("input", (e) => {
+  document.querySelector(".range input").addEventListener("input", e => {
     currentsong.volume = e.target.value / 100;
+  });
+
+  document.querySelectorAll(".playlist-btn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const folder = btn.dataset.folder;
+      await getsongs(folder);
+      playmusic(songs[0], true);
+    });
   });
 }
 

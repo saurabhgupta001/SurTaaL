@@ -1,28 +1,22 @@
-console.log('lets write Javascript');
+console.log('Let\'s write JavaScript');
+
 let songs = [];
 let currentsong = new Audio();
-let currfolder = '';
+let currfolder;
 
 function secondsToMinutes(seconds) {
-  if (isNaN(seconds) || seconds < 0) {
-    return "00:00";
-  }
-  const minutes = Math.floor(seconds / 60);
-  const remainingseconds = Math.floor(seconds % 60);
-  const formattedMinutes = String(minutes).padStart(2, '0');
-  const formattedsecond = String(remainingseconds).padStart(2, '0');
-  return `${formattedMinutes}:${formattedsecond}`;
+  if (isNaN(seconds) || seconds < 0) return "00:00";
+  const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const s = String(Math.floor(seconds % 60)).padStart(2, '0');
+  return `${m}:${s}`;
 }
 
 async function getsongs(folder) {
   currfolder = folder;
   try {
-    let response = await fetch("/songlist/tss/songs.json")
-;
-    let songList = await response.json();
-    songs = songList;
+    let res = await fetch(`${folder}/songs.json`);
+    songs = await res.json();
 
-    // Show all songs in the playlist
     let songul = document.querySelector(".list ul");
     songul.innerHTML = '';
     for (const song of songs) {
@@ -30,8 +24,8 @@ async function getsongs(folder) {
         <li>
           <img src="music.svg" alt="">
           <div class="infosong">
-            <div>${decodeURIComponent(song.replaceAll("%20", " "))}</div>
-            <div>- SurTaaL Music</div>
+            <div>${song}</div>
+            <div>-SurTaaL Music</div>
           </div>
           <div class="playnow">
             <span>Hit Me</span>
@@ -40,95 +34,89 @@ async function getsongs(folder) {
         </li>`;
     }
 
-    // Attach event listeners to each song item
-    Array.from(document.querySelectorAll(".list li")).forEach((e, i) => {
-      e.addEventListener("click", () => {
-        let songName = songs[i];
-        playmusic(songName.trim());
+    // Attach click listeners to each song
+    document.querySelectorAll(".list li").forEach((li, index) => {
+      li.addEventListener("click", () => {
+        playmusic(songs[index]);
       });
     });
 
-    return songs;
   } catch (err) {
-    console.error("Failed to load songs:", err);
-    return [];
+    console.error("Failed to fetch song list:", err);
   }
 }
 
-const playmusic = (track, pause = false) => {
-  const src = encodeURI(`/${currfolder}/${track}`);
-  currentsong.src = src;
-
+function playmusic(track, pause = false) {
+  currentsong.src = `${currfolder}/${track}`;
   if (!pause) {
     currentsong.play();
-    document.querySelector(".play img").src = "pause.svg";
+    document.querySelector("#play img").src = 'pause.svg';
   }
 
-  document.querySelector(".aboutsong").innerHTML = decodeURIComponent(track.replace(".mp3", " "));
-  document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
-};
+  document.querySelector(".aboutsong").textContent = track.replace(".mp3", "");
+  document.querySelector(".songtime").textContent = "00:00 / 00:00";
+}
 
 async function main() {
-  const play = document.querySelector(".play");
-  const next = document.querySelector(".next");
-  const prev = document.querySelector(".prev");
+  const playBtn = document.getElementById("play");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
 
-  songs = await getsongs("songlist/tss");
-
-  if (songs.length === 0) return;
-
+  await getsongs("songlist/hss");
   playmusic(songs[0], true);
 
-  play.addEventListener("click", () => {
+  playBtn.addEventListener("click", () => {
     if (currentsong.paused) {
       currentsong.play();
-      play.querySelector("img").src = "pause.svg";
+      playBtn.querySelector('img').src = 'pause.svg';
     } else {
       currentsong.pause();
-      play.querySelector("img").src = "playbar.svg";
+      playBtn.querySelector('img').src = 'playbar.svg';
     }
   });
 
-  prev.addEventListener("click", () => {
-    currentsong.pause();
-    let index = songs.indexOf(decodeURIComponent(currentsong.src.split("/").pop()));
+  prevBtn.addEventListener("click", () => {
+    let currentTrack = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentTrack);
     if (index > 0) {
       playmusic(songs[index - 1]);
     }
   });
 
-  next.addEventListener("click", () => {
-    currentsong.pause();
-    let index = songs.indexOf(decodeURIComponent(currentsong.src.split("/").pop()));
+  nextBtn.addEventListener("click", () => {
+    let currentTrack = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentTrack);
     if (index + 1 < songs.length) {
       playmusic(songs[index + 1]);
     }
   });
 
   currentsong.addEventListener("timeupdate", () => {
-    let current = currentsong.currentTime;
-    let total = currentsong.duration;
-    document.querySelector(".songtime").innerHTML = `${secondsToMinutes(current)} / ${secondsToMinutes(total)}`;
-
-    document.querySelector(".circle").style.left = `${(current / total) * 100}%`;
+    const current = currentsong.currentTime;
+    const duration = currentsong.duration || 0;
+    document.querySelector(".songtime").textContent = `${secondsToMinutes(current)} / ${secondsToMinutes(duration)}`;
+    document.querySelector(".circle").style.left = `${(current / duration) * 100}%`;
   });
 
   currentsong.addEventListener("ended", () => {
-    let index = songs.indexOf(decodeURIComponent(currentsong.src.split("/").pop()));
+    let currentTrack = currentsong.src.split("/").pop();
+    let index = songs.indexOf(currentTrack);
     if (index + 1 < songs.length) {
       playmusic(songs[index + 1]);
     }
   });
 
-  document.querySelector(".seekbar").addEventListener("click", (e) => {
-    const percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-    document.querySelector(".circle").style.left = percent + "%";
-    currentsong.currentTime = (currentsong.duration * percent) / 100;
+  document.querySelector(".seekbar").addEventListener("click", e => {
+    let percent = (e.offsetX / e.target.getBoundingClientRect().width);
+    if (!isNaN(currentsong.duration)) {
+      currentsong.currentTime = percent * currentsong.duration;
+    }
   });
 
-  document.querySelector(".range input").addEventListener("change", (e) => {
-    currentsong.volume = parseInt(e.target.value) / 100;
+  document.querySelector(".range input").addEventListener("input", (e) => {
+    currentsong.volume = e.target.value / 100;
   });
 }
 
 main();
+
